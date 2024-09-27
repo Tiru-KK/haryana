@@ -8,10 +8,10 @@ from streamlit_folium import folium_static
 st.set_page_config(page_title="Haryana Election Prediction Map", layout="wide")
 
 # Load Haryana GeoJSON or Shapefile
-geo_data = gpd.read_file("/haryana.assembly.shp")
+geo_data = gpd.read_file("haryana.assembly.shp")
 
 # Load your election data
-election_data = pd.read_csv("/haryana.csv")
+election_data = pd.read_csv("haryana.csv")
 
 # Merge GeoJSON with election data
 geo_data = geo_data.merge(election_data, left_on='ac_name', right_on='ac_name')
